@@ -1,0 +1,10 @@
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\bin\Debug\Entities.dll
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\bin\Debug\Entities.pdb
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\bin\Debug\Entities.xml
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.Resources.resources
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.vbproj.GenerateResource.cache
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.vbproj.CoreCompileInputs.cache
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.dll
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.xml
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.pdb
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.vbprojAssemblyReference.cache

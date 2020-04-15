@@ -1,0 +1,168 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DAL
+</name>
+</assembly>
+<members>
+<member name="T:DAL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:DAL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:DAL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:DAL.DBConnection.EjecutarSQL(System.String)">
+ <summary>
+ Ejecuta la sentencia SQL que no requieren retorno de información
+ </summary>
+ <param name="ConsultaEjecutar">
+ Consulta SQL que se desea ejecutar
+ </param>
+</member>
+<member name="M:DAL.DBConnection.EjecutarConsultaSQL(System.String)">
+ <summary>
+ Ejecuta la sentencia SQL que no requieren retorno de información
+ </summary>
+ <param name="sqlEjecutar">
+ Consulta que se desea ejecutar en la base de datos
+ </param>
+ <returns>
+ DataSet con la información obtenido de la consulta de base de datos
+ </returns>
+</member>
+<member name="M:DAL.DBConnection.EjecutarSP(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
+ <summary>
+ Permite ejecutar un procedimiento almacenado
+ </summary>
+ <param name="NombreProcedimiento">
+ Nombre del procedimiento almacenado que se desea ejecutar
+ </param>
+ <param name="Parametros">
+ Lista de parámetros que se requieren para ejecutar el procedimiento almacenado
+ </param>
+ <returns></returns>
+</member>
+<member name="M:DAL.DBQuerys.ValidarUsuario(Entities.Empleado)">
+ <summary>
+ Valida que el usuario que se está autenticando sea válido
+ </summary>
+ <param name="iEmpleado">
+ Objeto de tipo usuario con la información que se requiere para la consulta de validez
+ </param>
+ <returns>
+ Objeto del tipo usuario con los datos obtenidos
+ </returns>
+</member>
+<member name="M:DAL.DBQuerys.obtenerUsuario(Entities.Empleado)">
+ <summary>
+ Retorna el perfil de el usuario logueado
+ </summary>
+ <param name="iEmpleado"></param>
+ <returns>
+ Un objeto Empleado con los datos del perfil del usuario activo
+ </returns>
+</member>
+<member name="M:DAL.DBQuerys.obtenerRoles">
+ <summary>
+ busca todos los roles de empleo almacenados en la DB
+ </summary>
+ <returns>
+ Un arraylist con objetos de tipo Roles
+ </returns>
+</member>
+<member name="M:DAL.DBQuerys.InsertNuevoEmpleado(Entities.Empleado)">
+ <summary>
+ Insert a la tabla Empleado con el objeto Empleado
+ </summary>
+ <param name="iEmpleado"></param>
+</member>
+<member name="M:DAL.DBQuerys.obtenerTipoActivo">
+ <summary>
+ Consulta a la DB los tios de activos
+ </summary>
+ <returns>
+ Arraylis de Objetos TipoActivo 
+ </returns>
+</member>
+<member name="M:DAL.DBQuerys.insertActivo(Entities.Activo)">
+ <summary>
+ insert a la tabla activo con el objeto activo
+ </summary>
+ <param name="iActivo"></param>
+</member>
+<member name="M:DAL.DBQuerys.ontenerActivo(Entities.Activo)">
+ <summary>
+ busca un Activo en la base de datos con el ID_Activo
+ </summary>
+ <param name="iActivo"></param>
+ <returns>Un Objeto de tipo Activo</returns>
+</member>
+<member name="M:DAL.DBQuerys.actualizarActivo(Entities.Activo)">
+ <summary>
+ Ejecuta un update al Activo seleccionado
+ </summary>
+ <param name="iActivo"></param>
+</member>
+<member name="M:DAL.DBQuerys.eliminarActivo(Entities.Activo)">
+ <summary>
+ Elimina un Activo de la DB si este no ha sido aprobado
+ </summary>
+ <param name="iActivo"></param>
+</member>
+<member name="M:DAL.DBQuerys.aprobarDepresiacion(Entities.Depresiacion)">
+ <summary>
+ Aprobar una depresiacion
+ </summary>
+ <param name="iDepresiacion"></param>
+</member>
+<member name="M:DAL.DBQuerys.insertDepresiacion(Entities.Depresiacion)">
+ <summary>
+ insert de un objeto Dpresiacion en la DB
+ </summary>
+ <param name="iDepresiacion"></param>
+</member>
+<member name="M:DAL.DBQuerys.obtenerDepresiacionID(Entities.Activo)">
+ <summary>
+ Busca Todas las depresiaciones correspondientes a un activo especifico
+ </summary>
+ <param name="iActivo"></param>
+ <returns>
+ Un Arraylist de objetos Depresiacion
+ </returns>
+</member>
+<member name="M:DAL.DBQuerys.obtenerDepresiacionANNO(System.Int32)">
+ <summary>
+ Busca Todas las depresiaciones correspondientes a un anno especifico
+ </summary>
+ <param name="anno"></param>
+ <returns>
+ Un Arraylist de objetos Depresiacion
+ </returns>
+</member>
+<member name="M:DAL.DBQuerys.obtenerDepresiacionAprobaods">
+ <summary>
+ Busca Todas las depresiaciones aprobadas
+ </summary>
+ <returns>
+ Un Arraylist de objetos Depresiacion
+ </returns>
+</member>
+<member name="M:DAL.DBQuerys.eliminarDepresiacion(Entities.Activo)">
+ <summary>
+ Elimina todas las depresiaciones por el id del activo
+ </summary>
+ <param name="iActivo"></param>
+</member>
+</members>
+</doc>

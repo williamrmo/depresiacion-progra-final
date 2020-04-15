@@ -1,0 +1,46 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BLL
+</name>
+</assembly>
+<members>
+<member name="T:BLL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:BLL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:BLL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:BLL.EmpleadoReglas.validarUsuario(System.String,System.String)">
+ <summary>
+ Valida que el usuario ingresado se válido
+ </summary>
+ <param name="CodigoUsuario"></param>
+ <param name="Pass"></param>
+ <returns>
+ Objeto usuario con la ionformacion que se ha obtenido
+ </returns>
+</member>
+<member name="M:BLL.EmpleadoReglas.NuevoEmpleado(System.String,System.Int32,System.String,System.String,System.String)">
+ <summary>
+ Alamcenar un nuevo empleado
+ </summary>
+ <param name="IdEmpleado"></param>
+ <param name="IdRol"></param>
+ <param name="NombreEmpleado"></param>
+ <param name="Username"></param>
+ <param name="Password"></param>
+</member>
+</members>
+</doc>

@@ -1,0 +1,17 @@
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\bin\Debug\BLL.dll
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\bin\Debug\BLL.pdb
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\bin\Debug\BLL.xml
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\bin\Debug\DAL.dll
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\bin\Debug\Entities.dll
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\bin\Debug\DAL.pdb
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\bin\Debug\DAL.xml
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\bin\Debug\Entities.pdb
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\bin\Debug\Entities.xml
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\obj\Debug\BLL.vbprojAssemblyReference.cache
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\obj\Debug\BLL.Resources.resources
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\obj\Debug\BLL.vbproj.GenerateResource.cache
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\obj\Debug\BLL.vbproj.CoreCompileInputs.cache
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\obj\Debug\BLL.vbproj.CopyComplete
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\obj\Debug\BLL.dll
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\obj\Debug\BLL.xml
+C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\BLL\obj\Debug\BLL.pdb
