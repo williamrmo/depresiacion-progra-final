@@ -1,0 +1,18 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/views/privado.Master" AutoEventWireup="false" CodeBehind="Depresiacion.master.vb" Inherits="FontEnd.Depresiacion" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+     <div class="gridx">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary">
+              <a class="nav-link" href="nuevaDepresiacion">Nuevo Depresiacion</a>
+          </button>
+          <button type="button" class="btn btn-secondary">
+              <a class="nav-link" href="aprobarDepresiacion">Aprobar Depresiacion</a>
+          </button>
+        </div>
+
+     </div>
+
+    <div class="container">
+        <asp:ContentPlaceHolder ID="Depresiacion" runat="server"></asp:ContentPlaceHolder>
+    </div>
+</asp:Content>

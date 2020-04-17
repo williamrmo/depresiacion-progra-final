@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Nuevo Empleado" Language="vb" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="nuevoEmpleado.aspx.vb" Inherits="FontEnd.nuevoEmpleado" %>
+﻿<%@ Page Title="Nuevo Empleado" Language="vb" AutoEventWireup="true" MasterPageFile="~/views/privado.Master" CodeBehind="nuevoEmpleado.aspx.vb" Inherits="FontEnd.nuevoEmpleado" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="gridx">

@@ -53,12 +53,7 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/views/login">Login</a></li>
-                        <li><a runat="server" href="~/views/nuevoEmpleado">Nuevo Empleado</a></li>
-                        <li><a runat="server" href="~/views/Activos/nuevoActivo">Activos</a></li>
                     </ul>
-                    <span class="navbar-text">
-                      <asp:Label ID="lbPerfil" runat="server" Text=""></asp:Label>
-                    </span>
                 </div>
             </div>
         </div>

@@ -26,13 +26,18 @@ Public Class nuevoEmpleado
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
+            'If Not HttpContext.Current.User.Identity.IsAuthenticated Then
+            '    FormsAuthentication.RedirectToLoginPage()
+            'Else
             Me.lblError.Text = String.Empty
-            Me.lblError.Visible = False
-            Me.alert.Visible = False
+                Me.lblError.Visible = False
+                Me.alert.Visible = False
 
-            If Me.dliRolEmpleado.Items.Count = 0 Then
-                ItemsComboBoxID()
-            End If
+                If Me.dliRolEmpleado.Items.Count = 0 Then
+                    ItemsComboBoxID()
+                End If
+            'End If
+
         Catch ex As Exception
             Throw ex
         End Try

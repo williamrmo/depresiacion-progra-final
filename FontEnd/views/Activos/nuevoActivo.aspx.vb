@@ -56,4 +56,8 @@ Public Class nuevoActivo
             Me.alert.Visible = True
         End Try
     End Sub
+
+    Protected Sub dliTipoActivo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dliTipoActivo.SelectedIndexChanged
+
+    End Sub
 End Class

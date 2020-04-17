@@ -263,7 +263,8 @@ Public Class DBQuerys
                 .Append("', ")
                 .Append(iActivo.Valor_Historico)
                 .Append(", ")
-                .Append(iActivo.Valor_Residual_Porcent)
+                .AppendFormat("{0}", iActivo.Valor_Residual_Porcent)
+                ''.Append(iActivo.Valor_Residual_Porcent)
                 .Append(", ")
                 .Append(iActivo.Valor_Residual)
                 .Append(");")
@@ -276,12 +277,44 @@ Public Class DBQuerys
         End Try
     End Sub
 
+    Public Function ontenerIdActivo() As ArrayList
+        Try
+            Dim listaIdActivo As ArrayList = New ArrayList()
+
+            'variable para realizar la consulta de la información
+            Dim strConsultaSQL As New StringBuilder("select * from Activo;")
+
+            'ejecuta la sentencia a base de datos
+            Dim dsDatos As DataSet = Me.EjecutarConsultaSQL(strConsultaSQL.ToString)
+
+            'valida que el DataSet no sea nulo
+            If Not IsNothing(dsDatos) Then
+                'valida que se hayan obtenido tablas de la base de datos
+                If dsDatos.Tables.Count > 0 Then
+
+                    For Each drActivo As DataRow In dsDatos.Tables(0).Rows
+                        Dim iActivo As New Activo
+                        With iActivo
+                            .Id_Activo = CStr(drActivo("ID_ACTIVO"))
+                        End With
+
+                        listaIdActivo.Add(iActivo)
+                    Next
+
+                End If
+            End If
+            Return listaIdActivo
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     ''' <summary>
     ''' busca un Activo en la base de datos con el ID_Activo
     ''' </summary>
     ''' <param name="iActivo"></param>
     ''' <returns>Un Objeto de tipo Activo</returns>
-    Public Function ontenerActivo(ByVal iActivo As Activo) As Activo
+    Public Function obtenerDatoActivo(ByVal iActivo As Activo) As Activo
         Try
             'variable para realizar la consulta de la información
             Dim strConsultaSQL As New StringBuilder("Select * from Activo ")
@@ -432,6 +465,34 @@ Public Class DBQuerys
             Throw ex
         End Try
     End Sub
+
+    Public Function consultarActivoTB(ByVal iActivo As Activo) As DataTable
+        Try
+            'variable para realizar la consulta de la información
+            Dim strConsultaSQL As New StringBuilder("select ID_ACTIVO as Codigo, NOMBRE_TIPO_ACTIVO as Categoria, NOMBRE_ACTIVO as Nombre, VALOR_HISTORICO as 'Valor Historico', VALOR_RESIDUAL_PORCENTAJE as 'Porcentaje Residuo', VALOR_RESIDUAL as 'Valor Residual', APROBADO as 'Aprobado' ")
+
+            'agrega los filtros a la consulta de la información
+            With strConsultaSQL
+                .Append("from Activo ")
+                .Append("inner join Tipo_Activo ")
+                .Append("on Activo.ID_TIPO_ACTIVO = Tipo_Activo.ID_TIPO_ACTIVO ")
+                .Append("where ID_ACTIVO = '")
+                .Append(iActivo.Id_Activo)
+                .Append("';")
+            End With
+
+            'ejecuta la sentencia a base de datos
+            Dim dsDatos As DataSet = Me.EjecutarConsultaSQL(strConsultaSQL.ToString)
+
+            If dsDatos.Tables.Count >= 0 Then
+                Return dsDatos.Tables(0)
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 #End Region
 
 #Region "Depresiacion"

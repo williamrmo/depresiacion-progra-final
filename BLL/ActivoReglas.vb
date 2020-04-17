@@ -7,7 +7,6 @@ Public Class ActivoReglas
     Public Sub NuevoActivo(ByVal IdActivo As String, ByVal IdEmpleado As String, ByVal IdTipoAcivo As Integer, ByVal nombre As String, ByVal fechaAdquisicion As Date, ByVal ValorHistorico As Double, ByVal ValorResidualPorcent As Double, ByVal ValorResidual As Double)
         Try
 
-
             Dim iActivo As New Activo With {
                 .Id_Activo = IdActivo,
                 .Id_Empleado = IdEmpleado,
@@ -27,4 +26,46 @@ Public Class ActivoReglas
         End Try
     End Sub
 
+    Public Function ObtenerActivo(ByVal idActivo As String) As DataTable
+        Try
+
+            Dim iActivo As New Activo With {
+                .Id_Activo = idActivo
+            }
+
+            Dim iActvoDatos As New DBQuerys
+
+
+            Return iActvoDatos.consultarActivoTB(iActivo)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function getCodigoActivo() As ArrayList
+        Try
+
+            Dim iObtenerCodigoActivo As New DBQuerys
+
+            Return iObtenerCodigoActivo.ontenerIdActivo()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ObtenerActivoObjeto(ByVal idActivo As String) As Activo
+        Try
+
+            Dim iActivo As New Activo With {
+                .Id_Activo = idActivo
+            }
+
+            Dim iActvoDatos As New DBQuerys
+
+
+            Return iActvoDatos.obtenerDatoActivo(iActivo)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class

@@ -40,7 +40,7 @@
                             <small id="emailHelp" class="form-text text-muted">EJ: 25 (25%)</small>
                         </div>
                         
-                        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar Activo"  CssClass="btn btn-primary float-right" />
+                        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar Activo"  CssClass="btn btn-primary float-right" style="height: 36px" />
                     </div>
                 </form>
 

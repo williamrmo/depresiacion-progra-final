@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivoReglas.vb" />
+    <Compile Include="DepresiacionReglas.vb" />
     <Compile Include="EmpleadoReglas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

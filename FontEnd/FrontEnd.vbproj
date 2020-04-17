@@ -151,9 +151,12 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="views\Activos\eliminarActivo.aspx" />
     <Content Include="views\Activos\modificarActivo.aspx" />
+    <Content Include="views\Consultas\consultaActivo.aspx" />
+    <Content Include="views\Depresiacion\nuevaDepresiacion.aspx" />
+    <Content Include="views\homePrivado.aspx" />
     <Content Include="views\login.aspx" />
     <Content Include="views\Activos\nuevoActivo.aspx" />
-    <Content Include="views\nuevoEmpleado.aspx" />
+    <Content Include="views\Empleado\nuevoEmpleado.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -275,6 +278,41 @@
       <DependentUpon>modificarActivo.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="views\Consultas\consultaActivo.aspx.designer.vb">
+      <DependentUpon>consultaActivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Consultas\consultaActivo.aspx.vb">
+      <DependentUpon>consultaActivo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="views\Consultas\consultas.master.designer.vb">
+      <DependentUpon>consultas.master</DependentUpon>
+    </Compile>
+    <Compile Include="views\Consultas\consultas.master.vb">
+      <DependentUpon>consultas.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Depresiacion\Depresiacion.master.designer.vb">
+      <DependentUpon>Depresiacion.master</DependentUpon>
+    </Compile>
+    <Compile Include="views\Depresiacion\Depresiacion.master.vb">
+      <DependentUpon>Depresiacion.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Depresiacion\nuevaDepresiacion.aspx.designer.vb">
+      <DependentUpon>nuevaDepresiacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Depresiacion\nuevaDepresiacion.aspx.vb">
+      <DependentUpon>nuevaDepresiacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="views\homePrivado.aspx.designer.vb">
+      <DependentUpon>homePrivado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\homePrivado.aspx.vb">
+      <DependentUpon>homePrivado.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="views\login.aspx.designer.vb">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
@@ -289,12 +327,19 @@
       <DependentUpon>nuevoActivo.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="views\nuevoEmpleado.aspx.designer.vb">
+    <Compile Include="views\Empleado\nuevoEmpleado.aspx.designer.vb">
       <DependentUpon>nuevoEmpleado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="views\nuevoEmpleado.aspx.vb">
+    <Compile Include="views\Empleado\nuevoEmpleado.aspx.vb">
       <DependentUpon>nuevoEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="views\privado.Master.designer.vb">
+      <DependentUpon>privado.Master</DependentUpon>
+    </Compile>
+    <Compile Include="views\privado.Master.vb">
+      <DependentUpon>privado.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebForm1.aspx.designer.vb">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -329,6 +374,9 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="views\Activos\Activos.master" />
+    <Content Include="views\Depresiacion\Depresiacion.master" />
+    <Content Include="views\privado.Master" />
+    <Content Include="views\Consultas\consultas.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

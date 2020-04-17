@@ -1,0 +1,21 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/views/privado.Master" AutoEventWireup="false" CodeBehind="consultas.master.vb" Inherits="FontEnd.consultas" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="gridx">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary">
+              <a class="nav-link" href="nuevoActivo">Nuevo Activo</a>
+          </button>
+          <button type="button" class="btn btn-secondary">
+              <a class="nav-link" href="modificarActivo">Modificar Activo</a>
+          </button>
+          <button type="button" class="btn btn-secondary">
+              <a class="nav-link" href="eliminarActivo">Eliminar Activo</a>
+          </button>
+        </div>
+
+     </div>
+
+    <div class="container">
+        <asp:ContentPlaceHolder ID="Consultas" runat="server"></asp:ContentPlaceHolder>
+    </div>
+</asp:Content>

@@ -101,7 +101,7 @@ DAL
  </summary>
  <param name="iActivo"></param>
 </member>
-<member name="M:DAL.DBQuerys.ontenerActivo(Entities.Activo)">
+<member name="M:DAL.DBQuerys.obtenerDatoActivo(Entities.Activo)">
  <summary>
  busca un Activo en la base de datos con el ID_Activo
  </summary>

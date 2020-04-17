@@ -21,6 +21,7 @@ Public Class frmLogin
             Dim strCodigoUser As String = Me.username.Value
             Dim strPass As String = Me.password.Value
             Dim blnRecordarme As Boolean = Me.chkRecordar.Checked
+
             ' Instancia de la clase usuario que permite validar ei el usuario y la contraseña
             ' concuerda con algun usuario ya registrado
             Dim iEmpleado As New Empleado With {
@@ -36,9 +37,10 @@ Public Class frmLogin
 
             If iEmpleado.UsuarioValido Then
                 FormsAuthentication.RedirectFromLoginPage(iEmpleado.Username, blnRecordarme)
-                'Response.Redirect("~/Pages/frmInicioPrivado.aspx", False)
                 iPerfil = iEmpleadoReglas.ObtenerUsuario(iEmpleado.Id_Empleado)
-                SiteMaster.blLogin = True
+                Session("User") = iEmpleado.Nombre
+                Session("Rol") = iEmpleado.Id_Rol
+
             Else
                 Me.lblError.Text = "El usuario y/o la contraseña son invalidos"
                 Me.lblError.Visible = True
@@ -48,5 +50,9 @@ Public Class frmLogin
         Catch ex As Exception
             Response.Redirect("~/Pages/frmError.aspx")
         End Try
+    End Sub
+
+    Protected Sub chkRecordar_CheckedChanged(sender As Object, e As EventArgs)
+
     End Sub
 End Class

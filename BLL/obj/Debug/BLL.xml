@@ -22,6 +22,15 @@ BLL
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:BLL.DepresiacionReglas.CalcularDpresiacion(System.String)">
+ <summary>
+ Calcula la depresiacion
+ </summary>
+ <param name="IdActivo"></param>
+ <returns>
+ Retorna un activo con los datos
+ </returns>
+</member>
 <member name="M:BLL.EmpleadoReglas.validarUsuario(System.String,System.String)">
  <summary>
  Valida que el usuario ingresado se válido

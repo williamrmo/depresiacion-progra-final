@@ -37,15 +37,6 @@ FontEnd
  Returns the Asp log object.
  </summary>
 </member>
-<member name="F:FontEnd.SiteMaster._lbPerfil">
-<summary>
-lbPerfil control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:FontEnd.SiteMaster._MainContent">
 <summary>
 MainContent control.
@@ -112,6 +103,87 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:FontEnd.Activos1._Activo">
 <summary>
 Activo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.consultas._Consultas">
+<summary>
+Consultas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.Depresiacion._Depresiacion">
+<summary>
+Depresiacion control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevaDepresiacion._listActivos">
+<summary>
+listActivos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevaDepresiacion._btnRegistrar">
+<summary>
+btnRegistrar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevaDepresiacion._btnDepresiar">
+<summary>
+btnDepresiar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevaDepresiacion._alert">
+<summary>
+alert control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevaDepresiacion._lblError">
+<summary>
+lblError control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevaDepresiacion._dgvActivo">
+<summary>
+dgvActivo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevaDepresiacion._GridView1">
+<summary>
+GridView1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -319,6 +391,33 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:FontEnd.nuevoEmpleado._lblError">
 <summary>
 lblError control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.privado._lbtnCerrarSesion">
+<summary>
+lbtnCerrarSesion control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.privado._lbPerfil">
+<summary>
+lbPerfil control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.privado._MainContent">
+<summary>
+MainContent control.
 </summary>
 <remarks>
 Auto-generated field.
