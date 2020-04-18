@@ -109,9 +109,99 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:FontEnd.actico._listActivos">
+<summary>
+listActivos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.actico._btnConsultar">
+<summary>
+btnConsultar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.actico._alert">
+<summary>
+alert control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.actico._lblError">
+<summary>
+lblError control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.actico._dgvDepre">
+<summary>
+dgvDepre control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:FontEnd.consultas._Consultas">
 <summary>
 Consultas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.cunsultaAnno._txtAnno">
+<summary>
+txtAnno control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.cunsultaAnno._btnConsultar">
+<summary>
+btnConsultar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.cunsultaAnno._alert">
+<summary>
+alert control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.cunsultaAnno._lblError">
+<summary>
+lblError control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.cunsultaAnno._dgvDepre">
+<summary>
+dgvDepre control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -139,15 +229,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:FontEnd.nuevaDepresiacion._btnRegistrar">
 <summary>
 btnRegistrar control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:FontEnd.nuevaDepresiacion._btnDepresiar">
-<summary>
-btnDepresiar control.
 </summary>
 <remarks>
 Auto-generated field.

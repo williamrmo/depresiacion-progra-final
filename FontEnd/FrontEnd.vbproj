@@ -152,6 +152,7 @@
     <Content Include="views\Activos\eliminarActivo.aspx" />
     <Content Include="views\Activos\modificarActivo.aspx" />
     <Content Include="views\Consultas\consultaActivo.aspx" />
+    <Content Include="views\Consultas\consultaAnno.aspx" />
     <Content Include="views\Depresiacion\nuevaDepresiacion.aspx" />
     <Content Include="views\homePrivado.aspx" />
     <Content Include="views\login.aspx" />
@@ -291,6 +292,13 @@
     <Compile Include="views\Consultas\consultas.master.vb">
       <DependentUpon>consultas.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Consultas\consultaAnno.aspx.designer.vb">
+      <DependentUpon>consultaAnno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Consultas\consultaAnno.aspx.vb">
+      <DependentUpon>consultaAnno.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="views\Depresiacion\Depresiacion.master.designer.vb">
       <DependentUpon>Depresiacion.master</DependentUpon>

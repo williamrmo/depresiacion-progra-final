@@ -3,13 +3,10 @@
     <div class="gridx">
         <div class="btn-group" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-secondary">
-              <a class="nav-link" href="nuevoActivo">Nuevo Activo</a>
+              <a class="nav-link" href="consultaActivo">Consultar por codigo del Activo</a>
           </button>
           <button type="button" class="btn btn-secondary">
-              <a class="nav-link" href="modificarActivo">Modificar Activo</a>
-          </button>
-          <button type="button" class="btn btn-secondary">
-              <a class="nav-link" href="eliminarActivo">Eliminar Activo</a>
+              <a class="nav-link" href="consultaAnno">Consultar por año de Depresiacion</a>
           </button>
         </div>
 

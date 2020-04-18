@@ -11,16 +11,16 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class actico
+Partial Public Class cunsultaAnno
 
     '''<summary>
-    '''listActivos control.
+    '''txtAnno control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents listActivos As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtAnno As Global.System.Web.UI.HtmlControls.HtmlInputGenericControl
 
     '''<summary>
     '''btnConsultar control.

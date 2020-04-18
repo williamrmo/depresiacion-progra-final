@@ -64,4 +64,37 @@ Public Class DepresiacionReglas
             Throw ex
         End Try
     End Sub
+
+    Public Function ObtenerDepreTB(ByVal idActivo As String) As DataTable
+        Try
+
+            Dim iActivo As New Activo With {
+                .Id_Activo = idActivo
+            }
+
+            Dim iActvoDatos As New DBQuerys
+
+
+            Return iActvoDatos.consultarDepreTB(iActivo)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
+    Public Function ObtenerDepreAnnoTB(ByVal anno As String) As DataTable
+        Try
+
+            Dim iDepresiacion As New Depresiacion With {
+                .Anno_Depresiacion = anno
+            }
+
+            Dim iActvoDatos As New DBQuerys
+
+
+            Return iActvoDatos.consultarDepreAnnoTB(iDepresiacion)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class

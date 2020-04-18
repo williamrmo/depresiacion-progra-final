@@ -33,8 +33,6 @@ Public Class nuevaDepresiacion
             Me.lblError.Visible = False
             Me.alert.Visible = False
 
-            Me.btnDepresiar.Visible = False
-
             If Me.listActivos.Items.Count = 0 Then
                 ItemsComboBoxID()
             End If
@@ -52,17 +50,10 @@ Public Class nuevaDepresiacion
             Me.dgvActivo.DataSource = dtActivo
             Me.dgvActivo.DataBind()
             iDepreReglas.GuardarNuevaDepresiacion(listaDepre)
-            Me.btnDepresiar.Visible = True
+            ItemsComboBoxID()
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
 
-    Protected Sub btnDepresiar_Click(sender As Object, e As EventArgs) Handles btnDepresiar.Click
-        Try
-            iDepreReglas.GuardarNuevaDepresiacion(listaDepre)
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
 End Class

@@ -1,16 +1,16 @@
-﻿<%@ Page Title="Consultar por Activo" Language="vb" AutoEventWireup="true" MasterPageFile="~/views/Consultas/consultas.master" CodeBehind="consultaActivo.aspx.vb" Inherits="FontEnd.actico" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/views/Consultas/consultas.master" CodeBehind="consultaAnno.aspx.vb" Inherits="FontEnd.cunsultaAnno" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Consultas" runat="server">
     <div class="gridx">
         <div class="jumbotron">
-            <h2><%-- Error --%></h2>
+            <h2>Consultar Depresiacion por año</h2>
 
             <div class="row" >
                 <form>
                     <%-- Primera columna --%>
                     <div>
                         <div class="form-group">
-                            <label for="listActivos">Codigo Activo</label>
-                            <asp:DropDownList ID="listActivos" class="form-control" runat="server"></asp:DropDownList>            
+                            <label for="txtAnno">Año Depresiacion</label>
+                            <input type="number"  name="anno" id="txtAnno"  class="form-control" aria-describedby="emailHelp" runat="server" required="required">          
                         </div>
                         <asp:Button ID="btnConsultar" runat="server" Text="Consultar Depresiacion"  CssClass="btn btn-primary float-right" style="height: 36px" />
                     </div>
@@ -43,7 +43,4 @@
             </asp:GridView>
         </div>
     </div>
-
 </asp:Content>
-
-

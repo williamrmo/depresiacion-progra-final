@@ -7,4 +7,3 @@ C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\
 C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.dll
 C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.xml
 C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.pdb
-C:\Users\William Romero\Desktop\Trabjos Activos\ProyectoFinalProgra02\EnProceso\Codigo\Depresiaciones\Entities\obj\Debug\Entities.vbprojAssemblyReference.cache

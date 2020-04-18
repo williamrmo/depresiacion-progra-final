@@ -47,7 +47,18 @@ Public Class ActivoReglas
 
             Dim iObtenerCodigoActivo As New DBQuerys
 
-            Return iObtenerCodigoActivo.ontenerIdActivo()
+            Return iObtenerCodigoActivo.obtenerIdActivo()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function getCodigoActivoAprobados() As ArrayList
+        Try
+
+            Dim iObtenerCodigoActivo As New DBQuerys
+
+            Return iObtenerCodigoActivo.obtenerIdActivoAprobados()
         Catch ex As Exception
             Throw ex
         End Try

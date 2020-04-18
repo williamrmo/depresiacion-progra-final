@@ -277,12 +277,12 @@ Public Class DBQuerys
         End Try
     End Sub
 
-    Public Function ontenerIdActivo() As ArrayList
+    Public Function obtenerIdActivo() As ArrayList
         Try
             Dim listaIdActivo As ArrayList = New ArrayList()
 
             'variable para realizar la consulta de la información
-            Dim strConsultaSQL As New StringBuilder("select * from Activo;")
+            Dim strConsultaSQL As New StringBuilder("select * from Activo where APROBADO = 0;")
 
             'ejecuta la sentencia a base de datos
             Dim dsDatos As DataSet = Me.EjecutarConsultaSQL(strConsultaSQL.ToString)
@@ -308,6 +308,39 @@ Public Class DBQuerys
             Throw ex
         End Try
     End Function
+
+    Public Function obtenerIdActivoAprobados() As ArrayList
+        Try
+            Dim listaIdActivo As ArrayList = New ArrayList()
+
+            'variable para realizar la consulta de la información
+            Dim strConsultaSQL As New StringBuilder("select * from Activo where APROBADO = 1;")
+
+            'ejecuta la sentencia a base de datos
+            Dim dsDatos As DataSet = Me.EjecutarConsultaSQL(strConsultaSQL.ToString)
+
+            'valida que el DataSet no sea nulo
+            If Not IsNothing(dsDatos) Then
+                'valida que se hayan obtenido tablas de la base de datos
+                If dsDatos.Tables.Count > 0 Then
+
+                    For Each drActivo As DataRow In dsDatos.Tables(0).Rows
+                        Dim iActivo As New Activo
+                        With iActivo
+                            .Id_Activo = CStr(drActivo("ID_ACTIVO"))
+                        End With
+
+                        listaIdActivo.Add(iActivo)
+                    Next
+
+                End If
+            End If
+            Return listaIdActivo
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
 
     ''' <summary>
     ''' busca un Activo en la base de datos con el ID_Activo
@@ -760,6 +793,68 @@ Public Class DBQuerys
         End Try
     End Sub
 
+    Public Function consultarDepreTB(ByVal iActivo As Activo) As DataTable
+        Try
+            'variable para realizar la consulta de la información
+            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
+
+            'agrega los filtros a la consulta de la información
+            With strConsultaSQL
+                .Append("VALOR_HISTORICO as 'Valor Historico', DEPRESIACION_ANUAL as 'Depresicion Anual', DEPRESIACION_ACUMULADA as 'Depresiacion Acumulada', ANNO_DEPRESIACION as 'Año Depresiacion', ")
+                .Append("VALOR_NETO as 'Valor Neto', APROBADO, FECHA_APROBACION as 'Fecha de Aprobacion', ID_EMPLEADO_APROBACION, NOMBRE_EMPLEADO as 'Empleado que Aprobo' ")
+                .Append("from Depresiacion ")
+                .Append("inner join Activo on Depresiacion.ID_ACTIVO = Activo.ID_ACTIVO ")
+                .Append("inner join Tipo_Activo on Activo.ID_TIPO_ACTIVO = Tipo_Activo.ID_TIPO_ACTIVO ")
+                .Append("inner join Empleado on Depresiacion.ID_EMPLEADO_APROBACION = Empleado.ID_EMPLEADO ")
+                .Append("where Depresiacion.ID_ACTIVO = '")
+                .Append(iActivo.Id_Activo)
+                .Append("' and APROBADO = 1 ")
+                .Append("order by ANNO;")
+            End With
+
+            'ejecuta la sentencia a base de datos
+            Dim dsDatos As DataSet = Me.EjecutarConsultaSQL(strConsultaSQL.ToString)
+
+            If dsDatos.Tables.Count >= 0 Then
+                Return dsDatos.Tables(0)
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function consultarDepreAnnoTB(ByVal iDepresiacion As Depresiacion) As DataTable
+        Try
+            'variable para realizar la consulta de la información
+            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
+
+            'agrega los filtros a la consulta de la información
+            With strConsultaSQL
+                .Append("VALOR_HISTORICO as 'Valor Historico', DEPRESIACION_ANUAL as 'Depresicion Anual', DEPRESIACION_ACUMULADA as 'Depresiacion Acumulada', ANNO_DEPRESIACION as 'Año Depresiacion', ")
+                .Append("VALOR_NETO as 'Valor Neto', APROBADO, FECHA_APROBACION as 'Fecha de Aprobacion', ID_EMPLEADO_APROBACION, NOMBRE_EMPLEADO as 'Empleado que Aprobo' ")
+                .Append("from Depresiacion ")
+                .Append("inner join Activo on Depresiacion.ID_ACTIVO = Activo.ID_ACTIVO ")
+                .Append("inner join Tipo_Activo on Activo.ID_TIPO_ACTIVO = Tipo_Activo.ID_TIPO_ACTIVO ")
+                .Append("inner join Empleado on Depresiacion.ID_EMPLEADO_APROBACION = Empleado.ID_EMPLEADO ")
+                .Append("where Depresiacion.ANNO_DEPRESIACION = '")
+                .Append(iDepresiacion.Anno_Depresiacion)
+                .Append("' and APROBADO = 1;")
+            End With
+
+            'ejecuta la sentencia a base de datos
+            Dim dsDatos As DataSet = Me.EjecutarConsultaSQL(strConsultaSQL.ToString)
+
+            If dsDatos.Tables.Count >= 0 Then
+                Return dsDatos.Tables(0)
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 #End Region
 
 
