@@ -27,9 +27,14 @@ Public Class actico
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
+            ' Error
             Me.lblError.Text = String.Empty
             Me.lblError.Visible = False
             Me.alert.Visible = False
+            ' Exito
+            Me.lbExito.Text = String.Empty
+            Me.lbExito.Visible = False
+            Me.alertExito.Visible = False
 
             If Me.listActivos.Items.Count = 0 Then
                 ItemsComboBoxID()
@@ -47,8 +52,13 @@ Public Class actico
             Me.dgvDepre.DataSource = dtActivo
             Me.dgvDepre.DataBind()
 
+            Me.lbExito.Text = "Consulta exitosa"
+            Me.lbExito.Visible = True
+            Me.alertExito.Visible = True
         Catch ex As Exception
-            Throw ex
+            Me.lblError.Text = "Error al consultar"
+            Me.lblError.Visible = True
+            Me.alert.Visible = True
         End Try
     End Sub
 End Class

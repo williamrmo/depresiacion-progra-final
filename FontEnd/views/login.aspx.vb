@@ -37,9 +37,9 @@ Public Class frmLogin
 
             If iEmpleado.UsuarioValido Then
                 FormsAuthentication.RedirectFromLoginPage(iEmpleado.Username, blnRecordarme)
-                iPerfil = iEmpleadoReglas.ObtenerUsuario(iEmpleado.Id_Empleado)
                 Session("User") = iEmpleado.Nombre
                 Session("Rol") = iEmpleado.Id_Rol
+                Session("IdUsuario") = iEmpleado.Id_Empleado
 
             Else
                 Me.lblError.Text = "El usuario y/o la contraseña son invalidos"

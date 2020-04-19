@@ -51,6 +51,11 @@
             <div id="alert" runat="server" class="alert alert-danger" role="alert">
                 <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
             </div>
+
+            <%-- Exito ---%>
+            <div id="alertExito" runat="server" class="alert alert-success" role="alert">
+              <asp:Label ID="lbExito" runat="server" Text=""></asp:Label>
+            </div>
         </div>
     </div>
 </asp:Content>

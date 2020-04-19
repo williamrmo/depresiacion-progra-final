@@ -18,15 +18,17 @@
                 </form>
 
             </div>
-             <%-- Tabla con el Activo --%>
-            <br/>
+             <%-- Error --%>
             <div id="alert" runat="server" class="alert alert-danger" role="alert">
                 <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
             </div>
-            
+
+            <div id="alertExito" runat="server" class="alert alert-success" role="alert">
+              <asp:Label ID="lbExito" runat="server" Text=""></asp:Label>
+            </div>
 
             <hr />
-            <br />
+
             <asp:GridView ID="dgvDepre" runat="server" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="Año" HeaderText="Año" />

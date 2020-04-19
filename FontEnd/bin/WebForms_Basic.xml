@@ -145,6 +145,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:FontEnd.actico._alertExito">
+<summary>
+alertExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.actico._lbExito">
+<summary>
+lbExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:FontEnd.actico._dgvDepre">
 <summary>
 dgvDepre control.
@@ -199,6 +217,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:FontEnd.cunsultaAnno._alertExito">
+<summary>
+alertExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.cunsultaAnno._lbExito">
+<summary>
+lbExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:FontEnd.cunsultaAnno._dgvDepre">
 <summary>
 dgvDepre control.
@@ -207,6 +243,101 @@ dgvDepre control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member>
+<member name="F:FontEnd.aprobarDepresiacion._listActivos">
+<summary>
+listActivos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.aprobarDepresiacion._btnBuscarDepre">
+<summary>
+btnBuscarDepre control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.aprobarDepresiacion._dgvActivo">
+<summary>
+dgvActivo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.aprobarDepresiacion._dgvDepre">
+<summary>
+dgvDepre control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.aprobarDepresiacion._btnAprobar">
+<summary>
+btnAprobar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.aprobarDepresiacion._btnRechazar">
+<summary>
+btnRechazar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.aprobarDepresiacion._alert">
+<summary>
+alert control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.aprobarDepresiacion._lblError">
+<summary>
+lblError control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.aprobarDepresiacion._alertExito">
+<summary>
+alertExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.aprobarDepresiacion._lbExito">
+<summary>
+lbExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="M:FontEnd.aprobarDepresiacion.ItemsComboBoxID">
+ <summary>
+ Actruliza los datos del DropDownList
+ </summary>
 </member>
 <member name="F:FontEnd.Depresiacion._Depresiacion">
 <summary>
@@ -253,6 +384,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:FontEnd.nuevaDepresiacion._alertExito">
+<summary>
+alertExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevaDepresiacion._lbExito">
+<summary>
+lbExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:FontEnd.nuevaDepresiacion._dgvActivo">
 <summary>
 dgvActivo control.
@@ -262,14 +411,19 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:FontEnd.nuevaDepresiacion._GridView1">
+<member name="F:FontEnd.nuevaDepresiacion._dgvDepre">
 <summary>
-GridView1 control.
+dgvDepre control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member>
+<member name="M:FontEnd.nuevaDepresiacion.ItemsComboBoxID">
+ <summary>
+ Actruliza los datos del DropDownList
+ </summary>
 </member>
 <member name="F:FontEnd.frmLogin._username">
 <summary>
@@ -400,6 +554,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:FontEnd.nuevoActivo._lblError">
 <summary>
 lblError control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevoActivo._alertExito">
+<summary>
+alertExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevoActivo._lbExito">
+<summary>
+lbExito control.
 </summary>
 <remarks>
 Auto-generated field.

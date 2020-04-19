@@ -486,7 +486,7 @@ Public Class DBQuerys
                 .Append("', ")
                 .Append("ID_EMPLEADO_APROBACION ='")
                 .Append(iDepresiacion.Id_Empleado)
-                .Append("', ")
+                .Append("' ")
                 .Append("where ID_ACTIVO = '")
                 .Append(iDepresiacion.Id_Activo)
                 .Append("';")
@@ -841,6 +841,70 @@ Public Class DBQuerys
                 .Append("where Depresiacion.ANNO_DEPRESIACION = '")
                 .Append(iDepresiacion.Anno_Depresiacion)
                 .Append("' and APROBADO = 1;")
+            End With
+
+            'ejecuta la sentencia a base de datos
+            Dim dsDatos As DataSet = Me.EjecutarConsultaSQL(strConsultaSQL.ToString)
+
+            If dsDatos.Tables.Count >= 0 Then
+                Return dsDatos.Tables(0)
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function consultarDepreAprobacionTB(ByVal iActivo As Activo) As DataTable
+        Try
+            'variable para realizar la consulta de la información
+            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
+
+            'agrega los filtros a la consulta de la información
+            With strConsultaSQL
+                .Append("VALOR_HISTORICO as 'Valor Historico', DEPRESIACION_ANUAL as 'Depresicion Anual', DEPRESIACION_ACUMULADA as 'Depresiacion Acumulada', ANNO_DEPRESIACION as 'Año Depresiacion', ")
+                .Append("VALOR_NETO as 'Valor Neto', APROBADO, FECHA_APROBACION as 'Fecha de Aprobacion', ID_EMPLEADO_APROBACION, NOMBRE_EMPLEADO as 'Empleado que Aprobo' ")
+                .Append("from Depresiacion ")
+                .Append("inner join Activo on Depresiacion.ID_ACTIVO = Activo.ID_ACTIVO ")
+                .Append("inner join Tipo_Activo on Activo.ID_TIPO_ACTIVO = Tipo_Activo.ID_TIPO_ACTIVO ")
+                .Append("inner join Empleado on Depresiacion.ID_EMPLEADO_APROBACION = Empleado.ID_EMPLEADO ")
+                .Append("where Depresiacion.ID_ACTIVO = '")
+                .Append(iActivo.Id_Activo)
+                .Append("' and APROBADO = 1 ")
+                .Append("order by ANNO;")
+            End With
+
+            'ejecuta la sentencia a base de datos
+            Dim dsDatos As DataSet = Me.EjecutarConsultaSQL(strConsultaSQL.ToString)
+
+            If dsDatos.Tables.Count >= 0 Then
+                Return dsDatos.Tables(0)
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function consultarDepreNoAprobadosTB(ByVal iActivo As Activo) As DataTable
+        Try
+            'variable para realizar la consulta de la información
+            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
+
+            'agrega los filtros a la consulta de la información
+            With strConsultaSQL
+                .Append("VALOR_HISTORICO as 'Valor Historico', DEPRESIACION_ANUAL as 'Depresicion Anual', DEPRESIACION_ACUMULADA as 'Depresiacion Acumulada', ANNO_DEPRESIACION as 'Año Depresiacion', ")
+                .Append("VALOR_NETO as 'Valor Neto', APROBADO ")
+                .Append("from Depresiacion ")
+                .Append("inner join Activo on Depresiacion.ID_ACTIVO = Activo.ID_ACTIVO ")
+                .Append("inner join Tipo_Activo on Activo.ID_TIPO_ACTIVO = Tipo_Activo.ID_TIPO_ACTIVO ")
+                .Append("inner join Empleado on Activo.ID_EMPLEADO = Empleado.ID_EMPLEADO ")
+                .Append("where Depresiacion.ID_ACTIVO = '")
+                .Append(iActivo.Id_Activo)
+                .Append("' and APROBADO = 0 ")
+                .Append("order by ANNO;")
             End With
 
             'ejecuta la sentencia a base de datos

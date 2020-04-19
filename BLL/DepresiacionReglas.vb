@@ -97,4 +97,37 @@ Public Class DepresiacionReglas
             Throw ex
         End Try
     End Function
+
+    Public Function ObtenerDepreNoAprobadaTB(ByVal idActivo As String) As DataTable
+        Try
+
+            Dim iActivo As New Activo With {
+                .Id_Activo = idActivo
+            }
+
+            Dim iActvoDatos As New DBQuerys
+
+
+            Return iActvoDatos.consultarDepreNoAprobadosTB(iActivo)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Sub AprobarDepre(ByVal idActivo As String, ByVal daFecha As Date, ByVal idEmpleado As String)
+        Try
+            Dim iDepresiacion As New Depresiacion With {
+                .Id_Activo = idActivo,
+                .Fecha_Aprobacion = daFecha,
+                .Id_Empleado = idEmpleado
+            }
+
+            Dim iAprobarDepre As New DBQuerys
+
+            iAprobarDepre.aprobarDepresiacion(iDepresiacion)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class

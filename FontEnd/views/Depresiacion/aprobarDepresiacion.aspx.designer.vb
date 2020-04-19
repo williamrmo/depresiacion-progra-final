@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class actico
+Partial Public Class aprobarDepresiacion
 
     '''<summary>
     '''listActivos control.
@@ -23,13 +23,49 @@ Partial Public Class actico
     Protected WithEvents listActivos As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''btnConsultar control.
+    '''btnBuscarDepre control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnConsultar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnBuscarDepre As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''dgvActivo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dgvActivo As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''dgvDepre control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dgvDepre As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''btnAprobar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAprobar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnRechazar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnRechazar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''alert control.
@@ -66,13 +102,4 @@ Partial Public Class actico
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbExito As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''dgvDepre control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents dgvDepre As Global.System.Web.UI.WebControls.GridView
 End Class

@@ -25,9 +25,14 @@ Public Class nuevoActivo
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
+            ' Error
             Me.lblError.Text = String.Empty
             Me.lblError.Visible = False
             Me.alert.Visible = False
+            ' Exito
+            Me.lbExito.Text = String.Empty
+            Me.lbExito.Visible = False
+            Me.alertExito.Visible = False
 
             If Me.dliTipoActivo.Items.Count = 0 Then
                 ItemsComboBoxID()
@@ -50,14 +55,14 @@ Public Class nuevoActivo
 
             iActivoReglas.NuevoActivo(CStr(Me.txtIdActivo.Value), frmLogin.iPerfil.Id_Empleado, idTipoActivo, CStr(Me.txtNombreActivo.Value), strFecha, CDbl(Me.txtVH.Value), ValorResidualPorcent, ValorResidual)
 
+            Me.lbExito.Text = "Activo registrado exitosa"
+            Me.lbExito.Visible = True
+            Me.alertExito.Visible = True
         Catch ex As Exception
-            Me.lblError.Text = "No se ha inicialiazo ninguna sesion"
+            Me.lblError.Text = "Error al registrar el activo"
             Me.lblError.Visible = True
             Me.alert.Visible = True
         End Try
     End Sub
 
-    Protected Sub dliTipoActivo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dliTipoActivo.SelectedIndexChanged
-
-    End Sub
 End Class

@@ -1,9 +1,8 @@
 ﻿Imports Entities
 Imports BLL
 
-Public Class nuevaDepresiacion
+Public Class aprobarDepresiacion
     Inherits System.Web.UI.Page
-
 
     Dim iActivoReglas As New ActivoReglas
     Dim iDepreReglas As New DepresiacionReglas
@@ -42,6 +41,11 @@ Public Class nuevaDepresiacion
             Me.lbExito.Visible = False
             Me.alertExito.Visible = False
 
+            Me.btnAprobar.Visible = False
+            Me.btnAprobar.Enabled = False
+            Me.btnRechazar.Visible = False
+            Me.btnRechazar.Enabled = False
+
             ' en caso de que NO tenga valores se ejecuta la funcion
             If Me.listActivos.Items.Count = 0 Then
                 ItemsComboBoxID()
@@ -51,7 +55,7 @@ Public Class nuevaDepresiacion
         End Try
     End Sub
 
-    Protected Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+    Protected Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnBuscarDepre.Click
         Try
             ' Almacena el valor del DropDownList
             Dim strCodigoActivo As String = Me.listActivos.SelectedValue
@@ -59,26 +63,26 @@ Public Class nuevaDepresiacion
             ' Busca el Activo y lo almacena en una tabla
             Dim dtActivo As DataTable = iActivoReglas.ObtenerActivo(strCodigoActivo)
 
-            ' Ejecuta el metodo CalularDepresiacion donde hace todos los calculos necesarios y lo almacena en un arraylist
-            listaDepre = iDepreReglas.CalcularDpresiacion(strCodigoActivo)
-
             ' Carga lops datos del activo en pantalla
             Me.dgvActivo.DataSource = dtActivo
             Me.dgvActivo.DataBind()
-
-            ' Almacena la depresiacion almacenada en el arraylis
-            iDepreReglas.GuardarNuevaDepresiacion(listaDepre)
 
             Dim dtDepre As DataTable = iDepreReglas.ObtenerDepreNoAprobadaTB(strCodigoActivo)
             Me.dgvDepre.DataSource = dtDepre
             Me.dgvDepre.DataBind()
 
-            ' Actuliza el DropDoenList
-            ItemsComboBoxID()
+            Me.btnAprobar.Visible = True
+            Me.btnAprobar.Enabled = True
+            Me.btnRechazar.Visible = True
+            Me.btnRechazar.Enabled = True
 
-            Me.lbExito.Text = "Depresiacion exitosa"
-            Me.lbExito.Visible = True
-            Me.alertExito.Visible = True
+            ' Actuliza el DropDoenList
+            ' ItemsComboBoxID()
+
+
+            'Me.lbExito.Text = "Depresiacion exitosa"
+            'Me.lbExito.Visible = True
+            'Me.alertExito.Visible = True
 
         Catch ex As Exception
             Me.lblError.Text = "Error al calcular la depresiacion"
@@ -87,4 +91,35 @@ Public Class nuevaDepresiacion
         End Try
     End Sub
 
+    Protected Sub btnAprobar_Click(sender As Object, e As EventArgs) Handles btnAprobar.Click
+        Try
+            Dim idActivo As String = Me.listActivos.SelectedValue
+            Dim daFecha As Date = TimeOfDay
+            Dim IdEmpleado As String = Session("IdUsuario").ToString
+
+            iDepreReglas.AprobarDepre(idActivo, daFecha, IdEmpleado)
+
+            Me.lbExito.Text = "Depresiacion exitosa"
+            Me.lbExito.Visible = True
+            Me.alertExito.Visible = True
+        Catch ex As Exception
+            Me.lblError.Text = "Error al calcular la depresiacion"
+            Me.lblError.Visible = True
+            Me.alert.Visible = True
+        End Try
+    End Sub
+
+    Protected Sub btnRechazar_Click(sender As Object, e As EventArgs) Handles btnRechazar.Click
+        Try
+
+
+            Me.lbExito.Text = "Depresiacion exitosa"
+            Me.lbExito.Visible = True
+            Me.alertExito.Visible = True
+        Catch ex As Exception
+            Me.lblError.Text = "Error al calcular la depresiacion"
+            Me.lblError.Visible = True
+            Me.alert.Visible = True
+        End Try
+    End Sub
 End Class

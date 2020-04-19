@@ -50,6 +50,24 @@ Partial Public Class nuevaDepresiacion
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''alertExito control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents alertExito As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''lbExito control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbExito As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''dgvActivo control.
     '''</summary>
     '''<remarks>
@@ -59,11 +77,11 @@ Partial Public Class nuevaDepresiacion
     Protected WithEvents dgvActivo As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''GridView1 control.
+    '''dgvDepre control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents dgvDepre As Global.System.Web.UI.WebControls.GridView
 End Class
