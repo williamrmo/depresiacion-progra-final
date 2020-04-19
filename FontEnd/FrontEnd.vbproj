@@ -131,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -155,6 +154,7 @@
     <Content Include="views\Consultas\consultaAnno.aspx" />
     <Content Include="views\Depresiacion\aprobarDepresiacion.aspx" />
     <Content Include="views\Depresiacion\nuevaDepresiacion.aspx" />
+    <Content Include="views\error.aspx" />
     <Content Include="views\homePrivado.aspx" />
     <Content Include="views\login.aspx" />
     <Content Include="views\Activos\nuevoActivo.aspx" />
@@ -200,13 +200,6 @@
     </Compile>
     <Compile Include="About.aspx.vb">
       <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.vb">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Contact.aspx.vb">
-      <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.vb">
@@ -322,6 +315,13 @@
       <DependentUpon>nuevaDepresiacion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="views\error.aspx.designer.vb">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\error.aspx.vb">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="views\homePrivado.aspx.designer.vb">
       <DependentUpon>homePrivado.aspx</DependentUpon>
     </Compile>
@@ -402,6 +402,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="imgs\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.vbproj">

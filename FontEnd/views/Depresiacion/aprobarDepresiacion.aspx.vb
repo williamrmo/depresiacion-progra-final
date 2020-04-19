@@ -103,11 +103,11 @@ Public Class aprobarDepresiacion
 
             iDepreReglas.AprobarDepre(idActivo, daFecha, IdEmpleado)
 
-            Me.lbExito.Text = "Depresiacion exitosa"
+            Me.lbExito.Text = "Aprobacion exitosa"
             Me.lbExito.Visible = True
             Me.alertExito.Visible = True
         Catch ex As Exception
-            Me.lblError.Text = "Error al calcular la depresiacion"
+            Me.lblError.Text = "Error al Aprobar la depresiacion"
             Me.lblError.Visible = True
             Me.alert.Visible = True
         End Try
@@ -115,13 +115,22 @@ Public Class aprobarDepresiacion
 
     Protected Sub btnRechazar_Click(sender As Object, e As EventArgs) Handles btnRechazar.Click
         Try
+            Dim strRol As String = Session("Rol")
+            If strRol.Equals("2") Then
+                Dim idActivo As String = Me.listActivos.SelectedValue
+                iDepreReglas.eliminarDepre(idActivo)
+                Me.lbExito.Text = "Depreciacion rechazada con exito"
+                Me.lbExito.Visible = True
+                Me.alertExito.Visible = True
+            Else
+                Me.lblError.Text = "No cuenta con los permiso necesarios para ejecutar esta accion"
+                Me.lblError.Visible = True
+                Me.alert.Visible = True
+            End If
 
 
-            Me.lbExito.Text = "Depresiacion exitosa"
-            Me.lbExito.Visible = True
-            Me.alertExito.Visible = True
         Catch ex As Exception
-            Me.lblError.Text = "Error al calcular la depresiacion"
+            Me.lblError.Text = "Error al rechazar la depresiacion"
             Me.lblError.Visible = True
             Me.alert.Visible = True
         End Try
