@@ -50,6 +50,7 @@ Public Class nuevoActivo
             Dim ValorResidualPorcent As Double = CDbl(Me.txtVR.Value / 100)
             Dim ValorResidual As Double = CDbl(Me.txtVH.Value * ValorResidualPorcent)
             Dim strFecha As Date = Me.txtFecha.Value
+
             Dim iActivoReglas As New ActivoReglas
 
             iActivoReglas.NuevoActivo(CStr(Me.txtIdActivo.Value), idEmpleado, idTipoActivo, CStr(Me.txtNombreActivo.Value), strFecha, CDbl(Me.txtVH.Value), ValorResidualPorcent, ValorResidual)

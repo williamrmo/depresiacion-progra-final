@@ -47,7 +47,9 @@ Public Class nuevoEmpleado
     Protected Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Try
             Dim strRol As String = Session("Rol").ToString
+
             If strRol.Equals("3") Then
+                strRol = Me.dliRolEmpleado.SelectedItem.Value
                 Dim idRol As Integer
 
                 idRol = iRolesReglas.getIdRol(listaRoles, strRol)
@@ -72,7 +74,4 @@ Public Class nuevoEmpleado
         End Try
     End Sub
 
-    Protected Sub dliRolEmpleado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dliRolEmpleado.SelectedIndexChanged
-        strRol = Me.dliRolEmpleado.SelectedItem.Value
-    End Sub
 End Class
