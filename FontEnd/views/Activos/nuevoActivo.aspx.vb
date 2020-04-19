@@ -45,15 +45,14 @@ Public Class nuevoActivo
     Protected Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Try
 
-
+            Dim idEmpleado As String = Session("IdUsuario").ToString
             Dim idTipoActivo As String = iTipoActivosReglas.getIdTipoActivo(listaTiposActivo, Me.dliTipoActivo.SelectedValue)
             Dim ValorResidualPorcent As Double = CDbl(Me.txtVR.Value / 100)
             Dim ValorResidual As Double = CDbl(Me.txtVH.Value * ValorResidualPorcent)
-            ''Dim strFecha As String = Format(Me.txtFecha.Value, "MM/dd/yyyy")
             Dim strFecha As Date = Me.txtFecha.Value
             Dim iActivoReglas As New ActivoReglas
 
-            iActivoReglas.NuevoActivo(CStr(Me.txtIdActivo.Value), frmLogin.iPerfil.Id_Empleado, idTipoActivo, CStr(Me.txtNombreActivo.Value), strFecha, CDbl(Me.txtVH.Value), ValorResidualPorcent, ValorResidual)
+            iActivoReglas.NuevoActivo(CStr(Me.txtIdActivo.Value), idEmpleado, idTipoActivo, CStr(Me.txtNombreActivo.Value), strFecha, CDbl(Me.txtVH.Value), ValorResidualPorcent, ValorResidual)
 
             Me.lbExito.Text = "Activo registrado exitosa"
             Me.lbExito.Visible = True

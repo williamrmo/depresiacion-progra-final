@@ -26,17 +26,18 @@ Public Class nuevoEmpleado
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
-            'If Not HttpContext.Current.User.Identity.IsAuthenticated Then
-            '    FormsAuthentication.RedirectToLoginPage()
-            'Else
+            ' Error
             Me.lblError.Text = String.Empty
-                Me.lblError.Visible = False
-                Me.alert.Visible = False
+            Me.lblError.Visible = False
+            Me.alert.Visible = False
+            ' Exito
+            Me.lbExito.Text = String.Empty
+            Me.lbExito.Visible = False
+            Me.alertExito.Visible = False
 
-                If Me.dliRolEmpleado.Items.Count = 0 Then
-                    ItemsComboBoxID()
-                End If
-            'End If
+            If Me.dliRolEmpleado.Items.Count = 0 Then
+                ItemsComboBoxID()
+            End If
 
         Catch ex As Exception
             Throw ex
@@ -45,8 +46,8 @@ Public Class nuevoEmpleado
 
     Protected Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Try
-
-            If iEmpleadoReglas.validarAdmin(frmLogin.iPerfil) Then
+            Dim strRol As String = Session("Rol").ToString
+            If strRol.Equals("3") Then
                 Dim idRol As Integer
 
                 idRol = iRolesReglas.getIdRol(listaRoles, strRol)
@@ -55,13 +56,19 @@ Public Class nuevoEmpleado
 
                 iEmpleadosReglas.NuevoEmpleado(CStr(Me.txtIdEmpleado.Value), idRol, CStr(Me.txtNombreEmpleado.Value), CStr(Me.txtUsername.Value), CStr(Me.txtPassword.Value))
 
+                Me.lbExito.Text = "Empleado registrado con exito"
+                Me.lbExito.Visible = True
+                Me.alertExito.Visible = True
+
             Else
                 Me.lblError.Text = "El usuario no cuenta con los permisos necesarios"
                 Me.lblError.Visible = True
                 Me.alert.Visible = True
             End If
         Catch ex As Exception
-            Throw ex
+            Me.lblError.Text = "El usuario no cuenta con los permisos necesarios"
+            Me.lblError.Visible = True
+            Me.alert.Visible = True
         End Try
     End Sub
 

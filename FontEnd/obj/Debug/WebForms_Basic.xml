@@ -830,6 +830,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:FontEnd.nuevoEmpleado._alertExito">
+<summary>
+alertExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:FontEnd.nuevoEmpleado._lbExito">
+<summary>
+lbExito control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:FontEnd.privado._lbtnCerrarSesion">
 <summary>
 lbtnCerrarSesion control.
