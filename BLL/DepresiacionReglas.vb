@@ -81,7 +81,6 @@ Public Class DepresiacionReglas
         End Try
     End Function
 
-
     Public Function ObtenerDepreAnnoTB(ByVal anno As String) As DataTable
         Try
 
@@ -126,6 +125,19 @@ Public Class DepresiacionReglas
 
             iAprobarDepre.aprobarDepresiacion(iDepresiacion)
 
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Sub eliminarDepre(ByVal codigoActivo As String)
+        Try
+            Dim iActivo As New Activo With {
+                .Id_Activo = codigoActivo
+            }
+            Dim iEliminarDepre As New DBQuerys
+
+            iEliminarDepre.eliminarDepresiacion(iActivo)
         Catch ex As Exception
             Throw ex
         End Try

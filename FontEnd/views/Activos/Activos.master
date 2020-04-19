@@ -1,19 +1,19 @@
 ﻿<%@ Master Language="VB" MasterPageFile="~/views/privado.Master" AutoEventWireup="true" CodeBehind="Activos.master.vb" Inherits="FontEnd.Activos1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="gridx">
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-secondary">
-              <a class="nav-link" href="nuevoActivo">Nuevo Activo</a>
-          </button>
-          <button type="button" class="btn btn-secondary">
-              <a class="nav-link" href="modificarActivo">Modificar Activo</a>
-          </button>
-          <button type="button" class="btn btn-secondary">
-              <a class="nav-link" href="eliminarActivo">Eliminar Activo</a>
-          </button>
+            <button type="button" class="btn btn-secondary">
+                <a class="nav-link" href="nuevoActivo">Nuevo Activo</a>
+            </button>
+            <button type="button" class="btn btn-secondary">
+                <a class="nav-link" href="modificarActivo">Modificar Activo</a>
+            </button>
+            <button type="button" class="btn btn-secondary">
+                <a class="nav-link" href="eliminarActivo">Eliminar Activo</a>
+            </button>
         </div>
-
-     </div>
+    </div>
 
     <div class="container">
         <asp:ContentPlaceHolder ID="Activo" runat="server"></asp:ContentPlaceHolder>

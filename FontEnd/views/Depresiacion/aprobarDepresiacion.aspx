@@ -22,7 +22,7 @@
 
         <%-- Tabla Activo --%>
         <hr />
-        <asp:GridView ID="dgvActivo" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="dgvActivo" runat="server" AutoGenerateColumns="False" CssClass="table " BackColor="White" BorderColor="Black" BorderStyle="Solid">
             <Columns>
                 <asp:BoundField DataField="Codigo" HeaderText="Codigo Activo" />
                 <asp:BoundField DataField="Categoria" HeaderText="Categoria" />
@@ -35,11 +35,12 @@
 
         <hr />
         <%-- Tabla con la Depresiacion --%>
-        <asp:GridView ID="dgvDepre" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="dgvDepre" runat="server" AutoGenerateColumns="False" CssClass="table " BackColor="White" BorderColor="Black" BorderStyle="Solid">
             <Columns>
                 <asp:BoundField DataField="Año" HeaderText="Año" />
                 <asp:BoundField DataField="Año Depresiacion" HeaderText="Año Depresiacion" />
                 <asp:BoundField DataField="Codigo" HeaderText="Codigo" />
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                 <asp:BoundField DataField="Categoria" HeaderText="Categoria" />
                 <asp:BoundField DataField="Valor Historico" HeaderText="Valor Historico" />
                 <asp:BoundField DataField="Depresicion Anual" HeaderText="Depresicion Anual" />

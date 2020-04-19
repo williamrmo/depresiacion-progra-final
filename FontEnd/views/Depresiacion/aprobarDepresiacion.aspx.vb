@@ -57,32 +57,36 @@ Public Class aprobarDepresiacion
 
     Protected Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnBuscarDepre.Click
         Try
-            ' Almacena el valor del DropDownList
-            Dim strCodigoActivo As String = Me.listActivos.SelectedValue
+            Dim strRol As String = Session("Rol")
+            If strRol.Equals("2") Then
+                ' Almacena el valor del DropDownList
+                Dim strCodigoActivo As String = Me.listActivos.SelectedValue
 
-            ' Busca el Activo y lo almacena en una tabla
-            Dim dtActivo As DataTable = iActivoReglas.ObtenerActivo(strCodigoActivo)
+                ' Busca el Activo y lo almacena en una tabla
+                Dim dtActivo As DataTable = iActivoReglas.ObtenerActivo(strCodigoActivo)
 
-            ' Carga lops datos del activo en pantalla
-            Me.dgvActivo.DataSource = dtActivo
-            Me.dgvActivo.DataBind()
+                ' Carga lops datos del activo en pantalla
+                Me.dgvActivo.DataSource = dtActivo
+                Me.dgvActivo.DataBind()
 
-            Dim dtDepre As DataTable = iDepreReglas.ObtenerDepreNoAprobadaTB(strCodigoActivo)
-            Me.dgvDepre.DataSource = dtDepre
-            Me.dgvDepre.DataBind()
+                Dim dtDepre As DataTable = iDepreReglas.ObtenerDepreNoAprobadaTB(strCodigoActivo)
+                Me.dgvDepre.DataSource = dtDepre
+                Me.dgvDepre.DataBind()
 
-            Me.btnAprobar.Visible = True
-            Me.btnAprobar.Enabled = True
-            Me.btnRechazar.Visible = True
-            Me.btnRechazar.Enabled = True
+                Me.btnAprobar.Visible = True
+                Me.btnAprobar.Enabled = True
+                Me.btnRechazar.Visible = True
+                Me.btnRechazar.Enabled = True
+            Else
+                Me.lblError.Text = "No cuenta con los permisos necesarios"
+                Me.lblError.Visible = True
+                Me.alert.Visible = True
+            End If
 
-            ' Actuliza el DropDoenList
-            ' ItemsComboBoxID()
 
 
-            'Me.lbExito.Text = "Depresiacion exitosa"
-            'Me.lbExito.Visible = True
-            'Me.alertExito.Visible = True
+
+
 
         Catch ex As Exception
             Me.lblError.Text = "Error al calcular la depresiacion"
@@ -122,4 +126,5 @@ Public Class aprobarDepresiacion
             Me.alert.Visible = True
         End Try
     End Sub
+
 End Class

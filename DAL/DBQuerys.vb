@@ -414,12 +414,8 @@ Public Class DBQuerys
 
                 'agrega los filtros a la consulta de la información
                 With strConsultaSQL
-                    .Append("set ID_TIPO_ACTIVO = ")
-                    .Append(iActivo.Tipo_Activo)
-                    .Append(", NOMBRE_ACTIVO = '")
+                    .Append("set NOMBRE_ACTIVO = '")
                     .Append(iActivo.Nombre_Activo)
-                    .Append("', FECHA_ADQUISICION = '")
-                    .Append(iActivo.Fecha_Adquisicion)
                     .Append("', VALOR_HISTORICO = ")
                     .Append(iActivo.Valor_Historico)
                     .Append(", VALOR_RESIDUAL_PORCENTAJE = ")
@@ -796,7 +792,7 @@ Public Class DBQuerys
     Public Function consultarDepreTB(ByVal iActivo As Activo) As DataTable
         Try
             'variable para realizar la consulta de la información
-            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
+            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.NOMBRE_ACTIVO as Nombre, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
 
             'agrega los filtros a la consulta de la información
             With strConsultaSQL
@@ -828,7 +824,7 @@ Public Class DBQuerys
     Public Function consultarDepreAnnoTB(ByVal iDepresiacion As Depresiacion) As DataTable
         Try
             'variable para realizar la consulta de la información
-            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
+            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.NOMBRE_ACTIVO as Nombre, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
 
             'agrega los filtros a la consulta de la información
             With strConsultaSQL
@@ -859,7 +855,7 @@ Public Class DBQuerys
     Public Function consultarDepreAprobacionTB(ByVal iActivo As Activo) As DataTable
         Try
             'variable para realizar la consulta de la información
-            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
+            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.NOMBRE_ACTIVO as Nombre, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
 
             'agrega los filtros a la consulta de la información
             With strConsultaSQL
@@ -891,7 +887,7 @@ Public Class DBQuerys
     Public Function consultarDepreNoAprobadosTB(ByVal iActivo As Activo) As DataTable
         Try
             'variable para realizar la consulta de la información
-            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
+            Dim strConsultaSQL As New StringBuilder("select anno as Año, Depresiacion.ID_ACTIVO as Codigo, Activo.NOMBRE_ACTIVO as Nombre, Activo.ID_TIPO_ACTIVO, Tipo_Activo.NOMBRE_TIPO_ACTIVO as Categoria, ")
 
             'agrega los filtros a la consulta de la información
             With strConsultaSQL

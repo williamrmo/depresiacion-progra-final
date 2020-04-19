@@ -79,4 +79,39 @@ Public Class ActivoReglas
             Throw ex
         End Try
     End Function
+
+    Public Sub ModificarActivo(ByVal codigo As String, ByVal nombre As String, ByVal valorHistorico As Double, ByVal valorResiduo As Double)
+        Try
+            Dim porcentaje As Double = valorResiduo / 100
+            Dim dblValorResiduo As Double = valorHistorico * porcentaje
+
+            Dim iActivo As New Activo With {
+                .Id_Activo = codigo,
+                .Nombre_Activo = nombre,
+                .Valor_Historico = valorHistorico,
+                .Valor_Residual_Porcent = porcentaje,
+                .Valor_Residual = dblValorResiduo
+            }
+
+            Dim iActualizarActivo As New DBQuerys
+
+            iActualizarActivo.actualizarActivo(iActivo)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Sub eliminarActivo(ByVal codigo As String)
+        Try
+            Dim iActivo As New Activo With {
+                .Id_Activo = codigo
+            }
+
+            Dim iEliminarActivo As New DBQuerys
+
+            iEliminarActivo.eliminarActivo(iActivo)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class
