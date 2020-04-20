@@ -64,6 +64,15 @@ DAL
  Objeto del tipo usuario con los datos obtenidos
  </returns>
 </member>
+<member name="M:DAL.DBQuerys.existeUsuario(Entities.Empleado)">
+ <summary>
+ Validar que el usuario no este repetido
+ </summary>
+ <param name="iEmpleado"></param>
+ <returns>
+ si encuentra un usuario con el mismo id empleado = false
+ </returns>
+</member>
 <member name="M:DAL.DBQuerys.obtenerUsuario(Entities.Empleado)">
  <summary>
  Retorna el perfil de el usuario logueado

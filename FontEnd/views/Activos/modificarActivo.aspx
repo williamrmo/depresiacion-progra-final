@@ -17,7 +17,7 @@
                                     <label for="listActivos">Codigo Activo</label>
                                     <asp:DropDownList ID="listActivos" class="form-control" runat="server"></asp:DropDownList>
                                 </div>
-                                <asp:Button ID="btnConsultar" runat="server" Text="Consultar Depresiacion" CssClass="btn btn-primary float-right" Style="height: 36px" />
+                                <asp:Button ID="btnConsultar" runat="server" Text="Buscar Activo" CssClass="btn btn-primary float-right" Style="height: 36px" />
                             </div>
                         </form>
                     </div>

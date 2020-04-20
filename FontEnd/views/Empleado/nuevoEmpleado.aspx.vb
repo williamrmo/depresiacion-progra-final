@@ -56,11 +56,17 @@ Public Class nuevoEmpleado
 
                 Dim iEmpleadosReglas As New EmpleadoReglas
 
-                iEmpleadosReglas.NuevoEmpleado(CStr(Me.txtIdEmpleado.Value), idRol, CStr(Me.txtNombreEmpleado.Value), CStr(Me.txtUsername.Value), CStr(Me.txtPassword.Value))
+                If Not iEmpleadoReglas.usuarioRepetido(Me.txtIdEmpleado.Value, Me.txtUsername.Value) Then
+                    iEmpleadosReglas.NuevoEmpleado(CStr(Me.txtIdEmpleado.Value), idRol, CStr(Me.txtNombreEmpleado.Value), CStr(Me.txtUsername.Value), CStr(Me.txtPassword.Value))
 
-                Me.lbExito.Text = "Empleado registrado con exito"
-                Me.lbExito.Visible = True
-                Me.alertExito.Visible = True
+                    Me.lbExito.Text = "Empleado registrado con exito"
+                    Me.lbExito.Visible = True
+                    Me.alertExito.Visible = True
+                Else
+                    Me.lblError.Text = "El nombre de usuario y/o id del usuario ya existen"
+                    Me.lblError.Visible = True
+                    Me.alert.Visible = True
+                End If
 
             Else
                 Me.lblError.Text = "El usuario no cuenta con los permisos necesarios"

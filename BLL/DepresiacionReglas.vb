@@ -18,6 +18,7 @@ Public Class DepresiacionReglas
 
             iActivo = ObtenerActivoObjeto(IdActivo)
 
+            ' Calculos iniciales para comenzar la depre
             Dim intAnnoCont As Integer = 0
             Dim intAnnoDepre As Integer = CInt(Format(iActivo.Fecha_Adquisicion, "yyyy"))
             Dim dblCostoDpre As Double = iActivo.Valor_Historico - iActivo.Valor_Residual
@@ -25,9 +26,11 @@ Public Class DepresiacionReglas
             Dim dblImporteDepre As Double = dblCostoDpre * dblTasaDepre
             Dim dblDepreAculada As Double = 0
 
+            ' Mientras no se completa la vida util
             While iActivo.Vida_Util >= intAnnoCont
                 Dim iDepresiacion As New Depresiacion
 
+                ' calculos depresiacion
                 iDepresiacion.Id_Activo = iActivo.Id_Activo
                 iDepresiacion.Anno = intAnnoCont
                 iDepresiacion.Anno_Depresiacion = intAnnoDepre
@@ -35,13 +38,16 @@ Public Class DepresiacionReglas
                 iDepresiacion.Depresiacion_Acumulada = dblDepreAculada + dblImporteDepre
                 iDepresiacion.Valor_Neto = iActivo.Valor_Historico - dblDepreAculada
 
+                ' Almacena el ojeto depre. en el arraylist
                 listaDepresiacion.Add(iDepresiacion)
 
+                ' Incrementa variables
                 intAnnoDepre = intAnnoDepre + 1
                 intAnnoCont = intAnnoCont + 1
                 dblDepreAculada = dblDepreAculada + dblImporteDepre
             End While
 
+            ' Returna el arraylist
             Return listaDepresiacion
 
         Catch ex As Exception
@@ -49,6 +55,10 @@ Public Class DepresiacionReglas
         End Try
     End Function
 
+    ''' <summary>
+    ''' Guarda los datos en la tabla depre
+    ''' </summary>
+    ''' <param name="listaDepre"></param>
     Public Sub GuardarNuevaDepresiacion(ByVal listaDepre As ArrayList)
         Try
 
@@ -56,7 +66,7 @@ Public Class DepresiacionReglas
 
             Dim iDepre As New Depresiacion
 
-
+            ' Por cada objeto en el arraylist ejecuta un insert
             For Each iDepre In listaDepre
                 iNuevaDepre.insertDepresiacion(iDepre)
             Next

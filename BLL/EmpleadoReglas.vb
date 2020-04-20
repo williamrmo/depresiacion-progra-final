@@ -78,4 +78,19 @@ Public Class EmpleadoReglas
             Throw ex
         End Try
     End Function
+
+    Public Function usuarioRepetido(ByVal idEmpleado As String, ByVal username As String) As Boolean
+        Try
+            Dim iEmpleado As New Empleado With {
+                .Id_Empleado = idEmpleado,
+                .Username = username
+            }
+
+            Dim iUsuarioRepetido As New DBQuerys
+
+            Return iUsuarioRepetido.existeUsuario(iEmpleado)
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 End Class

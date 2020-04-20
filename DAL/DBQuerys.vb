@@ -68,6 +68,71 @@ Public Class DBQuerys
         End Try
     End Function
 
+
+    ''' <summary>
+    ''' Validar que el usuario no este repetido
+    ''' </summary>
+    ''' <param name="iEmpleado"></param>
+    ''' <returns>
+    ''' si encuentra un usuario con el mismo id empleado = false
+    ''' </returns>
+    Public Function existeUsuario(ByVal iEmpleado As Empleado) As Boolean
+        Try
+            Dim strConsultaSQL As New StringBuilder("Select *")
+
+            'agrega los filtros a la consulta de la información
+            With strConsultaSQL
+                .Append(" From EMPLEADO WHERE USERNAME_EMPLEADO = '")
+                .Append(iEmpleado.Username)
+                .Append("'")
+            End With
+
+            'ejecuta la sentencia a base de datos
+            Dim dsDatos As DataSet = Me.EjecutarConsultaSQL(strConsultaSQL.ToString)
+
+
+            'valida que el DataSet no sea nulo
+            If Not IsNothing(dsDatos) Then
+                'valida que se hayan obtenido tablas de la base de datos
+                If dsDatos.Tables.Count > 0 Then
+                    'valida que la tabla tenga registros para cargar la información en la clase
+                    If dsDatos.Tables(0).Rows.Count > 0 Then
+                        Return True
+
+                    Else
+                        ' validar que el username no sea repetido
+                        Dim strConsultaSQL2 As New StringBuilder("Select *")
+
+                        'agrega los filtros a la consulta de la información
+                        With strConsultaSQL2
+                            .Append(" From EMPLEADO WHERE ID_EMPLEADO = '")
+                            .Append(iEmpleado.Id_Empleado)
+                            .Append("'")
+                        End With
+
+                        'ejecuta la sentencia a base de datos
+                        Dim dsDatos2 As DataSet = Me.EjecutarConsultaSQL(strConsultaSQL2.ToString)
+
+                        'valida que el DataSet no sea nulo
+                        If Not IsNothing(dsDatos2) Then
+                            'valida que se hayan obtenido tablas de la base de datos
+                            If dsDatos2.Tables.Count > 0 Then
+                                'valida que la tabla tenga registros para cargar la información en la clase
+                                If dsDatos2.Tables(0).Rows.Count > 0 Then
+                                    Return True
+                                Else
+                                    Return False
+                                End If
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            Return True
+        End Try
+    End Function
+
     ''' <summary>
     ''' Retorna el perfil de el usuario logueado
     ''' </summary>
@@ -276,6 +341,11 @@ Public Class DBQuerys
         End Try
     End Sub
 
+
+    ''' <summary>
+    ''' Busca todos lo id's de los activos no aprobados
+    ''' </summary>
+    ''' <returns></returns>
     Public Function obtenerIdActivo() As ArrayList
         Try
             Dim listaIdActivo As ArrayList = New ArrayList()
@@ -308,6 +378,10 @@ Public Class DBQuerys
         End Try
     End Function
 
+    ''' <summary>
+    ''' Busca todos los Id's de los activos aprobados
+    ''' </summary>
+    ''' <returns></returns>
     Public Function obtenerIdActivoAprobados() As ArrayList
         Try
             Dim listaIdActivo As ArrayList = New ArrayList()
@@ -339,7 +413,6 @@ Public Class DBQuerys
             Throw ex
         End Try
     End Function
-
 
     ''' <summary>
     ''' busca un Activo en la base de datos con el ID_Activo
@@ -494,6 +567,13 @@ Public Class DBQuerys
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Consulta la tabla activos
+    ''' </summary>
+    ''' <param name="iActivo"></param>
+    ''' <returns>
+    ''' retorna una tabla con un activo 
+    ''' </returns>
     Public Function consultarActivoTB(ByVal iActivo As Activo) As DataTable
         Try
             'variable para realizar la consulta de la información
@@ -788,6 +868,13 @@ Public Class DBQuerys
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Consulta tabla depesiacion
+    ''' </summary>
+    ''' <param name="iActivo"></param>
+    ''' <returns>
+    ''' Una tabla depresiacion apripobada
+    ''' </returns>
     Public Function consultarDepreTB(ByVal iActivo As Activo) As DataTable
         Try
             'variable para realizar la consulta de la información
@@ -820,6 +907,13 @@ Public Class DBQuerys
         End Try
     End Function
 
+    ''' <summary>
+    ''' Consulta depresiacion por el anno
+    ''' </summary>
+    ''' <param name="iDepresiacion"></param>
+    ''' <returns>
+    ''' Tabla con las depresiaciones segun un anno especifico
+    ''' </returns>
     Public Function consultarDepreAnnoTB(ByVal iDepresiacion As Depresiacion) As DataTable
         Try
             'variable para realizar la consulta de la información
@@ -851,6 +945,13 @@ Public Class DBQuerys
         End Try
     End Function
 
+    ''' <summary>
+    ''' consulta a la tabla depresiacion de depre. Aprobadas
+    ''' </summary>
+    ''' <param name="iActivo"></param>
+    ''' <returns>
+    ''' Retorna una tabla depresiacion Aprobados
+    ''' </returns>
     Public Function consultarDepreAprobacionTB(ByVal iActivo As Activo) As DataTable
         Try
             'variable para realizar la consulta de la información
@@ -883,6 +984,13 @@ Public Class DBQuerys
         End Try
     End Function
 
+    ''' <summary>
+    ''' consulta a la tabla depresiacion de depre. no Aprobadas
+    ''' </summary>
+    ''' <param name="iActivo"></param>
+    ''' <returns>
+    ''' Retorna una tabla depresiacion no Aprobados
+    ''' </returns>
     Public Function consultarDepreNoAprobadosTB(ByVal iActivo As Activo) As DataTable
         Try
             'variable para realizar la consulta de la información
